@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="glaoria-logo-svg">
+  <defs>
+    <!-- Corporate Navy Blue Gradient matching uploaded logo -->
+    <linearGradient id="exactNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B4C7E"/>
+      <stop offset="45%" stop-color="#1B365D"/>
+      <stop offset="100%" stop-color="#102341"/>
+    </linearGradient>
+
+    <!-- Metallic Silver Gradient for Central Diamond Core -->
+    <linearGradient id="exactSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="35%" stop-color="#E2E8F0"/>
+      <stop offset="75%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+
+    <!-- Thin Joint Accent Line -->
+    <linearGradient id="jointLine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+  </defs>
+
+  <g>
+    <!-- Top-Right Slanted Bar -->
+    <polygon points="46,8 82,8 54,36 18,36" fill="url(#exactNavy)"/>
+
+    <!-- Main Lower "G" Chevron Loop -->
+    <polygon points="16,39 5,50 46,91 87,50 73,36 46,63 31,48 43,36 28,36" fill="url(#exactNavy)"/>
+
+    <!-- Accent Seam Line -->
+    <polygon points="36,81 39,84 37,86 34,83" fill="url(#jointLine)"/>
+
+    <!-- Central Floating Metallic Silver Diamond -->
+    <polygon points="34,50 63,39 69,45 40,56" fill="url(#exactSilver)"/>
+  </g>
+</svg>
