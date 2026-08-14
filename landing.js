@@ -2,6 +2,17 @@
   const isTouch = window.matchMedia('(pointer: coarse)').matches;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Theme toggle listener */
+  const themeToggleBtn = document.getElementById('themeToggle');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('glaoria-theme', next);
+    });
+  }
+
   /* Scroll progress bar */
   const progressBar = document.getElementById('scrollProgress');
   function updateProgress() {
@@ -171,25 +182,6 @@
     document.querySelectorAll('.decode').forEach(function (el) {
       setTimeout(function () { decode(el); }, 250);
     });
-    const navLogo = document.getElementById('navLogo');
-    if (navLogo) {
-      const finalHTML = navLogo.innerHTML;
-      const finalText = navLogo.textContent;
-      setTimeout(function () {
-        let frame = 0;
-        const totalFrames = finalText.length * 2;
-        (function step() {
-          let out = '';
-          for (let i = 0; i < finalText.length; i++) {
-            out += (i < frame / 2) ? finalText[i] : decodeChars[Math.floor(Math.random() * decodeChars.length)];
-          }
-          navLogo.textContent = out;
-          frame++;
-          if (frame <= totalFrames) requestAnimationFrame(step);
-          else navLogo.innerHTML = finalHTML;
-        })();
-      }, 100);
-    }
   }
 
   /* Side dot navigation */
