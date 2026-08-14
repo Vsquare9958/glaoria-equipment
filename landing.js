@@ -209,4 +209,34 @@
       sections.forEach(function (s) { sio.observe(s); });
     }
   }
+    /* Simple copy email button logic */
+  const copyBtn = document.getElementById('copyEmailBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      const email = copyBtn.getAttribute('data-email') || 'admin.gepl@gmail.com';
+      function markCopied() {
+        copyBtn.classList.add('copied');
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function () {
+          copyBtn.classList.remove('copied');
+          copyBtn.textContent = 'Copy';
+        }, 2000);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(markCopied).catch(function () { fallbackCopy(email); });
+      } else {
+        fallbackCopy(email);
+      }
+      function fallbackCopy(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); markCopied(); } catch (err) {}
+        document.body.removeChild(ta);
+      }
+    });
+  }
 })();
