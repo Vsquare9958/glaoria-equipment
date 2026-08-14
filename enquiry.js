@@ -63,6 +63,17 @@
   const successPanel = document.getElementById('successPanel');
   const submitBtn = form.querySelector('button[type="submit"]');
 
+  // Theme toggle listener
+  const themeToggleBtn = document.getElementById('themeToggle');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('glaoria-theme', next);
+    });
+  }
+
   // Parse URL query parameters for pre-filling engagement type
   const typeMap = { feasibility: 'feasibility', prototype: 'prototype', enterprise: 'enterprise' };
   const params = new URLSearchParams(window.location.search);
