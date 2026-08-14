@@ -502,6 +502,64 @@ section { padding-top: var(--section-pad); padding-bottom: var(--section-pad); p
 footer { padding: 56px 0; }
 .footer-inner .logo { font-size: 16px; }
 
+.closing-actions {
+  margin-top: var(--block-gap);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.simple-email-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: var(--secondary);
+  border: 1px solid var(--secondary-line);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.simple-email-box .email-label {
+  color: var(--text-lo);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.simple-email-box .email-text {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-hi);
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+.simple-copy-btn {
+  background: transparent;
+  border: 1px solid var(--secondary-line);
+  color: var(--text-hi);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.simple-copy-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.simple-copy-btn.copied {
+  background: var(--accent);
+  color: var(--accent-btn-text);
+  border-color: var(--accent);
+}
+
+
 /* Scroll progress */
 #scrollProgress {
   position: fixed;
