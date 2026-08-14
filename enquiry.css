@@ -231,3 +231,13 @@ footer { padding: 40px 0; }
   .submit-btn { width: 100%; justify-content: center; }
   .form-note { max-width: none; text-align: center; }
 }
+
+/* Light Theme Overrides */
+[data-theme="light"] .submit-btn {
+  color: #FFFFFF !important;
+}
+
+[data-theme="light"] .success-icon {
+  background: rgba(37, 99, 235, 0.12);
+  border-color: var(--accent);
+}
