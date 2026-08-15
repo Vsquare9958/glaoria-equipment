@@ -33,11 +33,17 @@ section { padding-top: var(--section-pad); padding-bottom: var(--section-pad); p
 
 .nav-links {
   display: flex;
-  gap: 44px;
+  align-items: center;
+  gap: 30px;
   font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-lo);
+  white-space: nowrap;
+}
+.nav-links a {
+  white-space: nowrap;
+  transition: color 0.2s ease;
 }
 .nav-links a:hover { color: var(--text-hi); }
 
@@ -637,6 +643,12 @@ body.cursor-hover .cursor-ring { width: 58px; height: 58px; border-color: var(--
 .reveal-target.in-view { opacity: 1; transform: translateY(0); }
 
 /* Responsive */
+@media (max-width: 1180px) and (min-width: 901px) {
+  .nav-inner { padding: 14px 28px; gap: 18px; }
+  .nav-links { gap: 20px; font-size: 12px; }
+  .nav-cta { padding: 11px 18px; font-size: 12.5px; }
+}
+
 @media (max-width: 900px) {
   :root { --section-pad: 90px; --block-gap: 56px; }
   .nav-links { display: none; }
