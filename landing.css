@@ -518,51 +518,62 @@ footer { padding: 56px 0; }
 
 .simple-email-box {
   display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 18px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px 24px;
   background: var(--secondary);
-  border: 1px solid var(--secondary-line);
+  border: 1px solid rgba(0, 245, 160, 0.4);
   border-radius: 8px;
-  font-size: 14px;
+  margin-top: 28px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+[data-theme="light"] .simple-email-box {
+  border: 1px solid rgba(37, 99, 235, 0.4);
+}
+
+.simple-email-box:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0, 245, 160, 0.2);
 }
 
 .simple-email-box .email-label {
   color: var(--text-lo);
-  font-size: 13px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
+  margin-bottom: 8px;
+  display: block;
 }
 
-.simple-email-box .email-text {
+.simple-email-box .email-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.simple-email-box .email-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent);
+  flex-shrink: 0;
+}
+
+.simple-email-box .email-link {
   font-family: 'IBM Plex Mono', monospace;
   color: var(--text-hi);
   font-weight: 600;
-  font-size: 14.5px;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.simple-copy-btn {
-  background: transparent;
-  border: 1px solid var(--secondary-line);
-  color: var(--text-hi);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
-}
-
-.simple-copy-btn:hover {
-  border-color: var(--accent);
+.simple-email-box .email-link:hover {
   color: var(--accent);
-}
-
-.simple-copy-btn.copied {
-  background: var(--accent);
-  color: var(--accent-btn-text);
-  border-color: var(--accent);
 }
 
 
